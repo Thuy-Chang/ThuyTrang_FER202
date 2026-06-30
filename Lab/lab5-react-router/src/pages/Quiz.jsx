@@ -7,6 +7,7 @@ import QuestionCard from '../components/QuestionCard';
 function Quiz() {
   const [answers, setAnswers] = useState({});
   const [score, setScore] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSelectAnswer = (questionId, answer) => {
     setAnswers({
@@ -25,11 +26,13 @@ function Quiz() {
     });
 
     setScore(totalScore);
+    setSubmitted(true);
   };
 
   const handleResetQuiz = () => {
     setAnswers({});
     setScore(null);
+    setSubmitted(false);
   };
 
   return (
@@ -39,7 +42,7 @@ function Quiz() {
         <h1>ReactJS Quiz</h1>
         <p>
           Choose one answer for each question, then submit the quiz to see your
-          final score.
+          final score and check which answers are correct or incorrect.
         </p>
       </div>
 
@@ -50,6 +53,7 @@ function Quiz() {
             question={question}
             selectedAnswer={answers[question.id]}
             onSelectAnswer={handleSelectAnswer}
+            submitted={submitted}
           />
         ))}
 
@@ -67,7 +71,7 @@ function Quiz() {
           </Link>
         </div>
 
-        {score !== null && (
+        {submitted && (
           <div className="score-box">
             <h2>
               Your Score: {score}/{quizQuestions.length}
@@ -76,7 +80,7 @@ function Quiz() {
             <p>
               {score === quizQuestions.length
                 ? 'Excellent! You answered all questions correctly.'
-                : 'Good effort! You can try again to improve your score.'}
+                : 'Please review the incorrect answers and try again.'}
             </p>
           </div>
         )}
