@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop LG Gram 2023 14ZD90R-G.AX52A5",
+      "description": "Intel Core i5-1340P, 8GB RAM, 256GB SSD, 14-inch WUXGA display, ultra-thin and lightweight.",
+      "price": 25990000,
+      "currentPrice": 24990000,
+      "image": "/images/laptop1.png"
+    },
+    {
+      "id": 2,
+      "name": "Laptop Acer Aspire 3 A315-59-51X8",
+      "description": "Intel Core i5-1235U, 8GB RAM, 512GB SSD, 15.6-inch FHD display, Windows 11.",
+      "price": 17990000,
+      "currentPrice": 11990000,
+      "image": "/images/laptop2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Laptop Dell Vostro 5630 i5P085W11GRU",
+      "description": "Intel Core i5-1340P, 8GB DDR5 RAM, 512GB SSD, 16-inch FHD+ display, Windows 11 Home.",
+      "price": 23190000,
+      "currentPrice": 19990000,
+      "image": "/images/laptop3.png"
+    },
+    {
+      "id": 4,
+      "name": "Laptop MSI Katana 15 B13VEK-252VN",
+      "description": "Intel Core i7-13620H, 8GB RAM, 512GB SSD, RTX 4050 6GB, 15.6-inch FHD 144Hz display.",
+      "price": 24990000,
+      "currentPrice": 22990000,
+      "image": "/images/laptop4.png"
+    },
+    {
+      "id": 5,
+      "name": "Laptop ASUS TUF Gaming F15 FX507ZC4-HN099W",
+      "description": "Intel Core i7-12700H, 8GB RAM, 512GB SSD, RTX 3050 4GB, 15.6-inch FHD 144Hz display.",
+      "price": 26990000,
+      "currentPrice": 23490000,
+      "image": "/images/laptop5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Laptop ASUS Vivobook A1505VA-L1114W",
+      "description": "Intel Core i5-13500H, 16GB RAM, 512GB SSD, 15.6-inch FHD OLED display, Windows 11 Home.",
+      "price": 20990000,
+      "currentPrice": 17190000,
+      "image": "/images/laptop6.png"
+    },
+    {
+      "id": 7,
+      "name": "Laptop Acer Predator Helios Neo PHN16-71-7460",
+      "description": "Intel Core i7-13700HX, 8GB RAM, 512GB SSD, RTX 4050 6GB, 16-inch QHD 165Hz display.",
+      "price": 38990000,
+      "currentPrice": 38490000,
+      "image": "/images/laptop7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Laptop MSI Modern 14 C7M-220VN",
+      "description": "AMD Ryzen 5 7530U, 8GB RAM, 512GB SSD, 14-inch FHD IPS display, Windows 11.",
+      "price": 12990000,
+      "currentPrice": 10990000,
+      "image": "/images/laptop8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Laptop Gaming Acer Nitro 5 Tiger AN515-58-773Y",
+      "description": "Intel Core i7-12700H, 8GB RAM, 512GB SSD, RTX 3050 Ti 4GB, 15.6-inch FHD display.",
+      "price": 31990000,
+      "currentPrice": 25490000,
+      "image": "/images/laptop9.png"
+    },
+    {
+      "id": 10,
+      "name": "Laptop Acer Swift 3 SF314-512-56QN",
+      "description": "Intel Core i5-1240P, 16GB RAM, 512GB SSD, 14-inch QHD IPS display, Windows 11.",
+      "price": 21990000,
+      "currentPrice": 17490000,
+      "image": "/images/laptop10.png"
+    }
+  ]
+}
