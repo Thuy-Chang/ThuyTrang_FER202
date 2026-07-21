@@ -1,6 +1,7 @@
 # AI Audit Log
 
 
+
 ## 1. Thông tin chung
 
 | Thông tin | Nội dung |
@@ -23,9 +24,9 @@
 Đánh dấu các công cụ AI đã sử dụng trong quá trình thực hiện bài tập/project.
 
 - [x] ChatGPT
-- [x] Gemini
-- [x] Claude
-- [x] GitHub Copilot
+- [ ] Gemini
+- [ ] Claude
+- [ ] GitHub Copilot
 - [ ] Cursor
 - [ ] Antigravity
 - [ ] Perplexity
@@ -65,7 +66,6 @@ các chức năng hoạt động trước khi nộp.
 ---
 
 ## 4. Nhật ký sử dụng AI chi tiết
-
 
 ---
 
@@ -655,88 +655,68 @@ Loading và error state rất quan trọng vì kết nối mạng không phải 
 
 | Nội dung | Thông tin |
 |---|---|
-| Ngày sử dụng | 20/07/2026 |
+| Ngày sử dụng | 19/07/2026 |
 | Công cụ AI | ChatGPT |
-| Mục đích sử dụng | Hoàn thiện tài liệu, kiểm thử, production build và đóng gói project |
-| Phần việc liên quan | Documentation / Testing / Packaging / Git |
+| Mục đích sử dụng | Hoàn thiện trang About và trình bày Learning Outcomes LO1–LO8 |
+| Phần việc liên quan | Documentation / Course Requirement Mapping |
 | Mức độ sử dụng | Hỗ trợ nhiều |
 
 #### 4.1. Prompt đã sử dụng
 
 ```text
-Hãy giúp tôi hoàn thiện:
+Hãy xây dựng trang About cho Laptop Store Management.
 
-- About page giải thích LO1–LO8
-- README.md
+Trang cần trình bày:
+- Project Overview
+- Application Features
+- Technology Stack
+- Learning Outcomes LO1–LO8
 - Resource Transparency
-- Testing checklist
-- npm run build
-- Đóng gói ZIP để bạn khác có thể kiểm tra, commit hoặc nộp
-- Không chứa node_modules và build
-- Giữ .git khi cần bàn giao lịch sử commit
+- Student hoặc Team Contribution
 
-Ngoài ra, khi giải nén project, npm báo ENOENT:
-Could not read package.json.
-Hãy phân tích nguyên nhân.
+Nội dung giao diện phải bằng tiếng Anh, phù hợp môn FER202,
+nhưng hướng dẫn thực hiện cho tôi bằng tiếng Việt.
 ```
 
 #### 4.2. Kết quả AI gợi ý
 
 ```text
-AI đề xuất About page gồm:
-- Project Overview
-- Features
-- LO1–LO8
-- Technology Stack
-- Resource Transparency
-- Student/Team Contribution
+AI đề xuất trang About gồm các khu vực:
 
-README gồm:
-- Application concept
-- Technology stack
-- Installation
-- Routes
-- API operations
-- LO explanations
-- Project structure
-- Contributions
-- Transparency
-- Testing checklist
+1. FER202 React Assignment
+2. Custom React Web Application
+3. Project Overview
+4. Application Features
+5. Learning Outcomes LO1–LO8
+6. Tools and Libraries
+7. Resource Transparency
+8. Student or Team Contribution
 
-Đối với ENOENT:
-AI xác định npm được chạy tại thư mục không chứa package.json.
-Cách xử lý:
-- Dùng dir /s /b package.json để tìm đúng vị trí
-- cd vào đúng thư mục project
-- Chỉ chạy npm install tại nơi có package.json
+AI cũng đề xuất dùng mảng learningOutcomes và map để render 8 card động,
+qua đó tiếp tục thể hiện JSX và ES6.
 ```
 
 #### 4.3. Phần sinh viên đã sử dụng từ AI
 
 ```text
-Cập nhật About.jsx và README.md.
-Chạy npm run build.
-Xóa build trước khi đóng gói.
-Kiểm tra ZIP không có node_modules.
-Tìm đúng thư mục chứa package.json khi chạy bản giải nén.
+Cập nhật src/pages/About.jsx.
+Tạo danh sách learningOutcomes và technologies.
+Hiển thị nội dung Project Overview, LO1–LO8 và Resource Transparency.
+Thêm CSS responsive cho About page.
 ```
 
 #### 4.4. Phần sinh viên tự chỉnh sửa hoặc cải tiến
 
 ```text
-Sinh viên trực tiếp chạy production build và xác nhận:
+Sinh viên kiểm tra lại nội dung từng LO để bảo đảm đúng với chức năng thực tế.
 
-Compiled successfully.
-The build folder is ready to be deployed.
+Điều chỉnh:
+- LO2 liên kết với ProductCardFunctional và ProductCardClass
+- LO5 liên kết đúng các route đã triển khai
+- LO7 ghi rõ local API, public API và lazy loading
+- LO8 ghi rõ Redux Favorites và counter trên Navbar
 
-Sinh viên kiểm tra lại cấu trúc thư mục sau khi giải nén.
-Phát hiện lỗi do chạy npm tại sai folder và sử dụng lệnh tìm package.json.
-
-Trước khi nộp, sinh viên cần tự:
-- Điền tên, MSSV, lớp và giảng viên
-- Xóa dữ liệu test khỏi db.json
-- Kiểm tra git log
-- Xác nhận ZIP chứa đúng source
+Sinh viên cần thay thông tin cá nhân thật trước khi nộp.
 ```
 
 #### 4.5. Minh chứng
@@ -744,20 +724,308 @@ Trước khi nộp, sinh viên cần tự:
 | Loại minh chứng | Nội dung |
 |---|---|
 | Link commit | https://github.com/Thuy-Chang/ThuyTrang_FER202 |
-| File liên quan | `README.md`, `About.jsx`, `.gitignore`, `package.json` |
-| Screenshot | `evidence/screenshots/07_production_build_success.png`, `evidence/screenshots/08_package_json_enoent_debug.png` |
-| Kết quả chạy/test | `npm run build` compiled successfully |
+| File liên quan | `src/pages/About.jsx`, `src/styles/custom.css` |
+| Screenshot | Cần chụp bổ sung trang About final có LO1–LO8 |
+| Kết quả chạy/test | Route `/about` hiển thị đúng nội dung và responsive |
 | Link video demo | `evidence/video/laptop_store_ai_audit_evidence.mp4` |
-| Ghi chú khác | Final review và packaging |
+| Ghi chú khác | Documentation trên giao diện |
 
 #### 4.6. Nhận xét cá nhân
 
 ```text
-Một project chạy được trên máy phát triển chưa chắc đã chạy được sau khi nén.
-Cần kiểm tra cấu trúc ZIP, package.json, package-lock.json, db.json,
-README, src và public trước khi gửi hoặc nộp.
+Trang About không chỉ dùng để giới thiệu project mà còn là minh chứng trực tiếp
+cho việc sinh viên hiểu từng Learning Outcome và biết phần code nào đáp ứng yêu cầu đó.
+```
 
-Production build là bước quan trọng để phát hiện lỗi compile cuối cùng.
+---
+
+### Lần sử dụng AI số 8
+
+| Nội dung | Thông tin |
+|---|---|
+| Ngày sử dụng | 20/07/2026 |
+| Công cụ AI | ChatGPT |
+| Mục đích sử dụng | Viết README và checklist kiểm thử toàn bộ ứng dụng |
+| Phần việc liên quan | Project Documentation / Manual Testing |
+| Mức độ sử dụng | Hỗ trợ nhiều |
+
+#### 4.1. Prompt đã sử dụng
+
+```text
+Hãy viết README.md hoàn chỉnh cho Laptop Store Management.
+
+README cần có:
+- Application Concept
+- Technology Stack
+- Installation
+- Run instructions
+- Routes
+- REST API operations
+- LO1–LO8 explanations
+- Project structure
+- Student/Team Contributions
+- Resource Transparency
+- Testing Checklist
+```
+
+#### 4.2. Kết quả AI gợi ý
+
+```text
+AI tạo cấu trúc README gồm 10 phần:
+
+1. Application Concept
+2. Technology Stack
+3. Project Installation
+4. Application Routes
+5. REST API Operations
+6. Learning Outcomes
+7. Project Structure
+8. Contributions
+9. Resource Transparency
+10. Testing Checklist
+
+AI cũng gợi ý checklist kiểm tra:
+Home, Products, Add, Detail, Edit, Delete, Favorites,
+Public API, 404, responsive, Console và build.
+```
+
+#### 4.3. Phần sinh viên đã sử dụng từ AI
+
+```text
+Cập nhật README.md bằng tiếng Anh.
+Bổ sung lệnh:
+- npm install
+- npm run dev
+- npm start
+- npm run server
+- npm run build
+
+Ghi rõ frontend chạy tại localhost:3000
+và JSON Server chạy tại localhost:3001/products.
+```
+
+#### 4.4. Phần sinh viên tự chỉnh sửa hoặc cải tiến
+
+```text
+Sinh viên đối chiếu README với package.json và source code thật.
+
+Kiểm tra:
+- Tên script chính xác
+- Route chính xác
+- Cấu trúc thư mục đúng
+- API endpoint đúng
+- Công nghệ thực sự đã được cài đặt và sử dụng
+
+Xóa hoặc sửa các placeholder trước khi nộp.
+```
+
+#### 4.5. Minh chứng
+
+| Loại minh chứng | Nội dung |
+|---|---|
+| Link commit | https://github.com/Thuy-Chang/ThuyTrang_FER202 |
+| File liên quan | `README.md`, `package.json`, `src/App.js` |
+| Screenshot | `evidence/screenshots/02_home_page_running.png`, `evidence/screenshots/03_product_list_api_data.png` |
+| Kết quả chạy/test | README hướng dẫn chạy đúng với project |
+| Link video demo | `evidence/video/laptop_store_ai_audit_evidence.mp4` |
+| Ghi chú khác | Tài liệu sử dụng và checklist |
+
+#### 4.6. Nhận xét cá nhân
+
+```text
+README giúp người khác có thể hiểu, cài đặt và kiểm tra project mà không cần hỏi lại.
+Tài liệu chỉ có giá trị khi các lệnh và cấu trúc được đối chiếu với project thực tế.
+```
+
+---
+
+### Lần sử dụng AI số 9
+
+| Nội dung | Thông tin |
+|---|---|
+| Ngày sử dụng | 20/07/2026 |
+| Công cụ AI | ChatGPT |
+| Mục đích sử dụng | Kiểm tra production build và đánh giá mức độ hoàn thành project |
+| Phần việc liên quan | Build Verification / Final Quality Check |
+| Mức độ sử dụng | Hỗ trợ một phần |
+
+#### 4.1. Prompt đã sử dụng
+
+```text
+Tôi đã hoàn thành các chức năng chính.
+Hãy hướng dẫn kiểm tra toàn bộ route, CRUD, Redux Favorites,
+public API, responsive, Console và production build trước khi đóng gói.
+```
+
+#### 4.2. Kết quả AI gợi ý
+
+```text
+AI đề xuất kiểm tra lần lượt:
+
+- /
+- /feature
+- /feature/1
+- /feature/1/edit
+- /about
+- route không tồn tại
+
+Kiểm tra:
+- Add validation
+- POST/PUT/DELETE
+- Reload data
+- Favorites add/remove/clear
+- Public API status
+- Responsive
+- Console errors
+
+Cuối cùng chạy:
+npm run build
+```
+
+#### 4.3. Phần sinh viên đã sử dụng từ AI
+
+```text
+Thực hiện manual test theo checklist.
+Chạy npm run build.
+Kiểm tra kết quả build và các JavaScript chunk.
+```
+
+#### 4.4. Phần sinh viên tự chỉnh sửa hoặc cải tiến
+
+```text
+Sinh viên trực tiếp chạy lệnh và nhận kết quả:
+
+Creating an optimized production build...
+Compiled successfully.
+The build folder is ready to be deployed.
+
+Sinh viên không chỉ dựa vào câu trả lời AI mà dùng output thật của Terminal
+để xác nhận project không còn lỗi compile.
+```
+
+#### 4.5. Minh chứng
+
+| Loại minh chứng | Nội dung |
+|---|---|
+| Link commit | https://github.com/Thuy-Chang/ThuyTrang_FER202 |
+| File liên quan | `package.json`, toàn bộ thư mục `src/` |
+| Screenshot | `evidence/screenshots/07_production_build_success.png` |
+| Kết quả chạy/test | `npm run build` – Compiled successfully |
+| Link video demo | `evidence/video/laptop_store_ai_audit_evidence.mp4` |
+| Ghi chú khác | Production verification |
+
+#### 4.6. Nhận xét cá nhân
+
+```text
+Production build là bước kiểm tra quan trọng vì development server có thể vẫn chạy
+trong khi project còn lỗi khiến bản production không thể tạo được.
+Kết quả build thành công là minh chứng kỹ thuật rõ ràng trước khi nộp.
+```
+
+---
+
+### Lần sử dụng AI số 10
+
+| Nội dung | Thông tin |
+|---|---|
+| Ngày sử dụng | 20/07/2026 |
+| Công cụ AI | ChatGPT |
+| Mục đích sử dụng | Đóng gói ZIP, bàn giao project và debug lỗi không tìm thấy package.json |
+| Phần việc liên quan | Packaging / Handoff / Git Preparation / Debug |
+| Mức độ sử dụng | Hỗ trợ critical |
+
+#### 4.1. Prompt đã sử dụng
+
+```text
+Tôi muốn nén project thành file ZIP để bạn tôi có thể:
+
+- Giải nén và chạy
+- Kiểm tra lần cuối
+- Commit tiếp lên Git
+- Hoặc nộp luôn
+
+Project không được chứa node_modules và build,
+nhưng cần giữ source, package.json, package-lock.json, db.json,
+README và .git khi cần giữ lịch sử commit.
+
+Sau khi giải nén, npm báo:
+Could not read package.json – ENOENT.
+Hãy tìm nguyên nhân và hướng dẫn sửa.
+```
+
+#### 4.2. Kết quả AI gợi ý
+
+```text
+AI đề xuất bản bàn giao phải có:
+
+- src/
+- public/
+- db.json
+- package.json
+- package-lock.json
+- README.md
+- .gitignore
+- .git/ nếu cần tiếp tục commit hoặc nộp lịch sử Git
+
+Không có:
+- node_modules/
+- build/
+
+Đối với ENOENT:
+Nguyên nhân là chạy npm ở thư mục không chứa package.json.
+
+Cách kiểm tra:
+dir /s /b package.json
+
+Sau đó cd vào đúng thư mục chứa package.json và chạy:
+npm install
+npm run dev
+```
+
+#### 4.3. Phần sinh viên đã sử dụng từ AI
+
+```text
+Xóa thư mục build.
+Kiểm tra cấu trúc project trước khi nén.
+Loại node_modules khỏi ZIP.
+Giữ các file source và tài liệu cần thiết.
+Tìm package.json trong bản giải nén.
+Chạy lại project từ đúng thư mục.
+```
+
+#### 4.4. Phần sinh viên tự chỉnh sửa hoặc cải tiến
+
+```text
+Sinh viên phát hiện bản giải nén có cấu trúc thư mục lồng hoặc đang đứng sai folder.
+
+Tự kiểm tra:
+- dir
+- tree /f
+- dir /s /b package.json
+- npm install
+- npm run dev
+
+Sinh viên hiểu rằng file ZIP chỉ được coi là đúng khi có thể giải nén
+ở một thư mục khác và chạy lại thành công.
+```
+
+#### 4.5. Minh chứng
+
+| Loại minh chứng | Nội dung |
+|---|---|
+| Link commit | https://github.com/Thuy-Chang/ThuyTrang_FER202 |
+| File liên quan | `.gitignore`, `package.json`, `package-lock.json`, `README.md`, file ZIP |
+| Screenshot | `evidence/screenshots/08_package_json_enoent_debug.png` |
+| Kết quả chạy/test | Xác định đúng nguyên nhân ENOENT và vị trí package.json |
+| Link video demo | `evidence/video/laptop_store_ai_audit_evidence.mp4` |
+| Ghi chú khác | Final packaging và handoff |
+
+#### 4.6. Nhận xét cá nhân
+
+```text
+Đóng gói project là một phần của quy trình phát triển phần mềm.
+Một file ZIP tốt phải đủ source để cài lại, không chứa file dư thừa,
+giữ được lịch sử Git khi đề yêu cầu và có hướng dẫn chạy rõ ràng.
 ```
 
 ---
@@ -1106,4 +1374,3 @@ Sinh viên/nhóm cam kết rằng:
 ### 11.10. Repository
 
 https://github.com/Thuy-Chang/ThuyTrang_FER202
-
